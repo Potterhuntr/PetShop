@@ -80,7 +80,7 @@
 
          #primeiro {
              border: 5px #FFFFFF solid ;
-             background-color: /*#D3D3D3*/ #ffffff	;
+             background-color:  #ffffff	;
              font-size: 40px;
              font-weight: bolder;
              color: #000000;
@@ -104,7 +104,7 @@
 
          #segundo {
            border: 1px #FFFFFF solid ;
-           background-color: #D3D3D3	;
+           background-color: #ffffff		;
            font-size: 40px;
            font-weight: bolder;
            color: #000000;
@@ -128,7 +128,7 @@
 
          #terceiro {
            border: 1px #FFFFFF solid ;
-          background-color: #D3D3D3	;
+          background-color: #ffffff	;
            font-size: 40px;
            font-weight: bolder;
            color: #000000;
@@ -152,7 +152,7 @@
 
          #quarto {
            border: 1px #FFFFFF solid ;
-           background-color: #D3D3D3	;
+           background-color: #ffffff		;
            font-size: 40px;
            font-weight: bolder;
            color: #000000;
@@ -175,7 +175,7 @@
 
          #quinto {
            border: 1px #FFFFFF solid ;
-           background-color: #D3D3D3	;
+           background-color: #ffffff		;
            font-size: 40px;
            font-weight: bolder;
            color: #000000;

@@ -88,7 +88,7 @@ align-items:flex-start;
     <br>
     <br>
     <br>
-    <a   href = "#">FORNECEDOR</a>           <a href = "#">SERVIÇO</a>        <a  href = "#">ANIMAL</a>
+    <a   href = "fornecedor.php">FORNECEDOR</a>           <a href = "#">SERVIÇO</a>        <a  href = "#">ANIMAL</a>
     <br>
     <br>
     <br>
