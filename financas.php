@@ -11,7 +11,7 @@
     padding: 0px auto;
     font-family: monospace;
     color: #444444;
-    background-color: #5F9EA0;
+
   }
   body{
     background-color: #F5FFFA;

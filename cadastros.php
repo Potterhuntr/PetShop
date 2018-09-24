@@ -12,7 +12,8 @@
   padding: 0px auto;
   font-family: monospace;
   color: #444444;
-  background-color: #5F9EA0;
+
+
 }
 body{
   background-color: #F5FFFA;
@@ -30,7 +31,7 @@ body{
   width: 900px;
   height: 200px;
   padding: 20px;
-  margin: 0px auto;
+  margin: 50px auto;
   color: #000000;
   text-align: center;
   font-size: 50px;

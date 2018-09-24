@@ -13,7 +13,7 @@
           margin: 0px auto;
            font-family: monospace  ;
            color: #444444;
-           background-color: #5F9EA0;
+
          }
 
          body{
@@ -38,7 +38,8 @@
            font-size: 50px;
            font-weight: bolder;
            font-style: oblique;
-           font-family: cur ;
+           font-family: cursive ;
+
          }
 
          #menu-topo{
@@ -47,6 +48,7 @@
            padding: 15px;
            margin: 20px auto;
            border: 1px #FFFFFF solid ;
+           background-color: #5F9EA0;
          }
 
 
