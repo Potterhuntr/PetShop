@@ -1,3 +1,47 @@
+<?php
+include("agoraconecta.php");
+if(isset ($_POST['cadastrar'])){
+  if(!isset ($_SESSION))
+    session_start();
+
+  foreach ($_POST as $chave=>$valor) {
+    $_SESSION[$chave] = $valor;
+
+  if(strlen($_SESSION['nome']) == 0)
+    $erro[] = "Preencha o Nome.";
+
+  if(strlen($_SESSION['documento']) == 0)
+      $erro[] = "Preencha o Documento!.";
+
+  if(strlen($_SESSION['contato']) == 0)
+      $erro[] = "Preencha o Contato!.";
+
+  if(strlen($_SESSION['estado']) == "Selecione...")
+      $erro[] = "Preencha o Estado!.";
+
+  if(strlen($_SESSION['cidade']) == 0)
+      $erro[] = "Preencha o Cidade!.";
+
+  if(strlen($_SESSION['cep']) == 0)
+      $erro[] = "Preencha o CEP!.";
+
+  if(strlen($_SESSION['rua']) == 0)
+      $erro[] = "Preencha a Rua/Avenida!.";
+
+  if(strlen($_SESSION['bairro']) == 0)
+      $erro[] = "Preencha o Bairro!.";
+
+  if(strlen($_SESSION['email']) == 0)
+      $erro[] = "Preencha o EMAIL!.";
+
+  if (count($erro)) == 0){
+    echo "$erro";
+  }
+  foreach($variavel as $valor)
+
+}
+}
+ ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -77,7 +121,16 @@
   </script>
 
 <body>
-<form id="cadastro" name="cadastro" method="post" action="menu.php" onsubmit="return validaCampo(); return false;">
+<<<<<<< HEAD
+  <?php
+  if (count($erro) > 0)
+  foreach ($erro as $valor) echo "$valor";
+
+   ?>
+<form id="cadastro" name="cadastro" method="post" action="cadastros.php" onsubmit="return validaCampo(); return false;">
+=======
+<form id="cadastro" name="cadastro" method="post" action="cadastros.php" onsubmit="return validaCampo(); return false;">
+>>>>>>> 0b4679be77c683ed30e853638f0d984f008f1973
 
   <table width="625" border="0">
     <tr>
@@ -151,7 +204,7 @@
     <tr>
 
       <td width="69">CEP:</td>
-      <td><input name="cep" type="text" id="cep" maxlength="50" />
+      <td><input name="cep" type="text" id="cep" size="70" maxlength="50" />
       <span class="style1">*</span></td>
 
     </tr>

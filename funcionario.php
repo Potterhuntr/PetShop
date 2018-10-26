@@ -36,6 +36,11 @@
     return false;
     }
     else
+    if(document.cadastro.ctps.value==""){
+    alert("O Campo Cidade é obrigatório!");
+    return false;
+    }
+    else
     if(document.cadastro.contato.value==""){
     alert("O Campo Contato é obrigatório!");
     return false;
@@ -82,7 +87,7 @@
   </script>
 
 <body>
-<form id="cadastro" name="cadastro" method="post" action="cadastro.php" onsubmit="return validaCampo(); return false;">
+<form id="cadastro" name="cadastro" method="post" action="cadastros.php" onsubmit="return validaCampo(); return false;">
 
   <table width="625" border="0">
     <tr>
@@ -103,8 +108,16 @@
 
     <tr>
 
-      <td width="69">Número da Conta Bancária:</td>
-      <td width="546"><input name="numContBac" type="text" id="numContBac" size="55" maxlength="255" />
+      <td size="69">Conta Bancária:</td>
+      <td aling= "center" width="546"><input name="numContBac" type="text" id="numContBac" size="55" maxlength="255"  aling/>
+      <span class="style1">*</span> <span class="style3">Apenas números</span> </td>
+
+    </tr>
+
+    <tr>
+
+      <td width="69">CTPS:</td>
+      <td width="546"><input name="ctps" type="text" id="ctps" size="55" maxlength="255" />
       <span class="style1">*</span> <span class="style3">Apenas números</span> </td>
 
     </tr>
@@ -164,7 +177,7 @@
     <tr>
 
       <td width="69">CEP:</td>
-      <td><input name="cep" type="text" id="cep" maxlength="50" />
+      <td width="546"><input name="cep" type="text" id="cep" size="70" maxlength="50" />
       <span class="style1">*</span></td>
 
     </tr>

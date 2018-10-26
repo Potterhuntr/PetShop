@@ -71,7 +71,7 @@
   </script>
 
 <body>
-<form id="cadastro" name="cadastro" method="post" action="cadastro.php" onsubmit="return validaCampo(); return false;">
+<form id="cadastro" name="cadastro" method="post" action="cadastros.php" onsubmit="return validaCampo(); return false;">
 
   <table width="625" border="0">
     <tr>
@@ -145,7 +145,7 @@
     <tr>
 
       <td width="69">CEP:</td>
-      <td><input name="cep" type="text" id="cep" maxlength="50" />
+      <td><input name="cep" type="text" id="cep" size="70" maxlength="50" />
       <span class="style1">*</span></td>
 
     </tr>
