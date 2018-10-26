@@ -31,6 +31,11 @@
     return false;
     }
     else
+    if(document.cadastro.numContBac.value==""){
+    alert("O Campo Cidade é obrigatório!");
+    return false;
+    }
+    else
     if(document.cadastro.contato.value==""){
     alert("O Campo Contato é obrigatório!");
     return false;
@@ -77,7 +82,7 @@
   </script>
 
 <body>
-<form id="cadastro" name="cadastro" method="post" action="menu.php" onsubmit="return validaCampo(); return false;">
+<form id="cadastro" name="cadastro" method="post" action="cadastro.php" onsubmit="return validaCampo(); return false;">
 
   <table width="625" border="0">
     <tr>
@@ -93,6 +98,14 @@
       <td width="69">Documento:</td>
       <td width="546"><input name="documento" type="text" id="documento" size="70" maxlength="255" />
       <span class="style1">*</span></td>
+
+    </tr>
+
+    <tr>
+
+      <td width="69">Número da Conta Bancária:</td>
+      <td width="546"><input name="numContBac" type="text" id="numContBac" size="55" maxlength="255" />
+      <span class="style1">*</span> <span class="style3">Apenas números</span> </td>
 
     </tr>
 

@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Cadastro Fornecedor</title>
+    <title>Cadastro Cliente</title>
   </head>
 
   <style type="text/css">
@@ -66,18 +66,12 @@
     return false;
     }
     else
-    if(document.cadastro.email.value=="")
-    {
-    alert("O Campo email é obrigatório!");
-    return false;
-    }
-    else
     return true;
     }
   </script>
 
 <body>
-<form id="cadastro" name="cadastro" method="post" action="menu.php" onsubmit="return validaCampo(); return false;">
+<form id="cadastro" name="cadastro" method="post" action="cadastro.php" onsubmit="return validaCampo(); return false;">
 
   <table width="625" border="0">
     <tr>
@@ -174,12 +168,6 @@
         <span class="style1">*</span>
        </td>
 
-    </tr>
-
-    <tr>
-      <td width="69">Email:</td>
-      <td><input name="email" type="text" id="email" size="70" maxlength="255" />
-        <span class="style1">*</span></td>
     </tr>
 
     <tr>
