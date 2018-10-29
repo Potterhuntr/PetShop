@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Cadastro Fornecedor</title>
+    <title>Cadastro Funcionário</title>
   </head>
 
   <style type="text/css">

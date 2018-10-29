@@ -1,5 +1,5 @@
 <?php
-include("agoraconecta.php");
+/*include("agoraconecta.php");
 if(isset ($_POST['cadastrar'])){
   if(!isset ($_SESSION))
     session_start();
@@ -40,7 +40,7 @@ if(isset ($_POST['cadastrar'])){
   foreach($variavel as $valor)
 
 }
-}
+}*/
  ?>
 <!DOCTYPE html>
 <html>
@@ -121,16 +121,16 @@ if(isset ($_POST['cadastrar'])){
   </script>
 
 <body>
-<<<<<<< HEAD
+
   <?php
+  /*
   if (count($erro) > 0)
   foreach ($erro as $valor) echo "$valor";
-
+  */
    ?>
 <form id="cadastro" name="cadastro" method="post" action="cadastros.php" onsubmit="return validaCampo(); return false;">
-=======
-<form id="cadastro" name="cadastro" method="post" action="cadastros.php" onsubmit="return validaCampo(); return false;">
->>>>>>> 0b4679be77c683ed30e853638f0d984f008f1973
+
+
 
   <table width="625" border="0">
     <tr>
