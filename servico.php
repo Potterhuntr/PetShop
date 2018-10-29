@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Cadastro Cargo</title>
+    <title>Cadastro Serviço</title>
   </head>
 
   <style type="text/css">
@@ -21,18 +21,13 @@
   <script type="text/javascript">
     function validaCampo()
     {
-    if(document.cadastro.nome.value==""){
-    alert("O Campo Nome é obrigatório!");
-    return false;
-    }
-    else
     if(document.cadastro.descricao.value==""){
     alert("O Campo Descrição é obrigatório!");
     return false;
     }
     else
-    if(document.cadastro.nivelAcesso.value==""){
-    alert("O Campo Nível de Acesso é obrigatório!");
+    if(document.cadastro.preco.value==""){
+    alert("O Campo Preço é obrigatório!");
     return false;
     }
     else
@@ -44,27 +39,18 @@
 <form id="cadastro" name="cadastro" method="post" action="cadastros.php" onsubmit="return validaCampo(); return false;">
 
   <table width="625" border="0">
-
-    <tr>
-
-      <td width="69">Nome:</td>
-      <td width="546"><input name="nome" type="text" id="nome" size="70" maxlength="255" />
-      <span class="style1">*</span></td>
-
-    </tr>
-
     <tr>
 
       <td width="69">Descrição:</td>
-      <td width="546"><textarea name="descricao" type="text" id="descricao" maxlength="100" rows="4" cols="70">  </textarea>
+      <td width="546"><textarea name="descricao" type="text" id="descricao" maxlength="255" rows="4" cols="70">  </textarea>
       <span class="style1">*</span></td>
 
     </tr>
 
     <tr>
 
-      <td width="69">Nível de Acesso:</td>
-      <td width="546"><input name="nivelAcesso" type="double" id="nivelAcesso" size="70" maxlength="10" />
+      <td width="69">Preço:</td>
+      <td width="546"><input name="preco" type="double" id="preco" size="70"  />
       <span class="style1">*</span></td>
 
 
