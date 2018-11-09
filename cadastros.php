@@ -3,10 +3,8 @@
 
 <head>
   <title>Cadastros</title>
-
   <!-- inclui o css -->
   <link rel="stylesheet" href="css/estilo.css">
-
 </head>
 
 <body>
