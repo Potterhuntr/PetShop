@@ -11,10 +11,19 @@ $numero = trim($_POST['numero']);
 $email = trim($_POST['email']);
 
 
-$conecta = mysqli_connect ('localhost', 'root', 'mysql', 'pet');
-$sqlinsert = "INSERT INTO Fornecedor ()"
+$conecta = mysqli_connect ('localhost', 'root', 'mysql', 'Pet');
 
-if($mysqli->connect_errno){
-  echo "Falha na conexão : (".$mysqli->connect_errno.") ".$mysqli->connect_errno;
+$sqlinsert = "INSERT INTO fornecedor (nome, documento, contato, estado, cidade, cep, rua, bairro, numero, email) VALUES"
+ ."('$nome', '$documento', '$contato', '$estado', '$cidade', '$cep', '$rua', '$bairro', '$numero', '$email')";
+
+//
+//
+
+$resultado =  mysqli_query($conecta, $sqlinsert);
+
+if($resultado){
+  echo "Fornecedor inserido com sucesso";
+} else {
+echo "Falha no cadastro";
 }
  ?>

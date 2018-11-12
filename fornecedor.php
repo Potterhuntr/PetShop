@@ -78,7 +78,7 @@
 
 <body>
 
-<form id="cadastro" name="cadastro" method="post" action="cadastros.php" onsubmit="return validaCampo(); return false;">
+<form id="cadastro" name="cadastro" method="post" action="bd_cadastrar/insertForne.php" onsubmit="return validaCampo(); return false;">
 
 
 
@@ -188,7 +188,7 @@
     <tr>
 
     <td colspan="2"><p>
-      <input name="cadastrar" type="submit" id="cadastrar" value="Concluir"/>
+      <input name="cadastrar1" type="submit" id="cadastrar1" value="Concluir"/>
 
       <input name="limpar" type="reset" id="limpar" value="Limpar Campos preenchidos!" />
 
