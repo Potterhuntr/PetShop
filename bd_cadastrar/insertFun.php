@@ -1,6 +1,8 @@
 <?php
 $nome = trim($_POST['nome']);
 $documento = trim($_POST['documento']);
+$numContBac = trim($_POST['numContBac']);
+$ctps= trim($_POST['ctps']);
 $contato = trim($_POST['contato']);
 $cidade = trim($_POST['cidade']);
 $cep = trim($_POST['cep']);
@@ -17,14 +19,14 @@ if(!$conecta){
   die("Problema ao conectar no banco!");
 }
 
-$sqlinsert = "INSERT INTO fornecedor (nome, documento, contato, cidade_id, cep, rua, bairro, numero, email) VALUES ('$nome', '$documento', '$contato', '$cidade', '$cep', '$rua', '$bairro', '$numero', '$email')";
+$sqlinsert = "INSERT INTO funcionario (nome, documento, numerocontabancaria, ctps, contato, cidade_id, cep, rua, bairro, numero, email) VALUES ('$nome', '$documento','$numContBac', '$ctps', '$contato', '$cidade', '$cep', '$rua', '$bairro', '$numero', '$email')";
 
 // echo $sqlinsert . "<br/>";
 
 $resultado =  mysqli_query($conecta, $sqlinsert);
 
 if($resultado){
-  echo "Fornecedor inserido com sucesso";
+  echo "Funcionário inserido com sucesso";
 } else {
 echo "Falha no cadastro";
 }

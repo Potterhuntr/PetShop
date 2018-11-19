@@ -1,3 +1,15 @@
+<?php
+
+$conexao = new mysqli("localhost", "root", "mysql", "pet"); //conectando com o bd
+
+if($conexao === false){
+  die("ERROR: não foi possível conectar o bando de dados:  " . $conexao->connect_error);
+}
+$sql = "SELECT * FROM cidade ORDER BY nome";
+
+$cidades = $conexao->query($sql);
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -35,11 +47,7 @@
     alert("O Campo Contato é obrigatório!");
     return false;
     }
-    else
-    if(document.cadastro.estado.value==""){
-    alert("O Campo Estado é obrigatório!");
-    return false;
-    }
+
     else
     if(document.cadastro.cidade.value==""){
     alert("O Campo Cidade é obrigatório!");
@@ -71,7 +79,7 @@
   </script>
 
 <body>
-<form id="cadastro" name="cadastro" method="post" action="cadastros.php" onsubmit="return validaCampo(); return false;">
+<form id="cadastro" name="cadastro" method="post" action="bd_cadastrar/insertCli.php" onsubmit="return validaCampo(); return false;">
 
   <table width="625" border="0">
     <tr>
@@ -99,48 +107,25 @@
     </tr>
 
     <tr>
+      <td>Cidade:</td><br>
+        <td><select name="cidade" id="cidade">
+          <?php
 
-      <td width="69">Estado:</td>
-      <td><select name="estado" id="estado" >
-        <option >Selecione...</option>
-        <option value="AC">AC</option>
-        <option value="AL">AL</option>
-        <option value="AP">AP</option>
-        <option value="AM">AM</option>
-        <option value="BA">BA</option>
-        <option value="CE">CE</option>
-        <option value="ES">ES</option>
-        <option value="DF">DF</option>
-        <option value="MA">MA</option>
-        <option value="MT">MT</option>
-        <option value="MS">MS</option>
-        <option value="MG">MG</option>
-        <option value="PA">PA</option>
-        <option value="PB">PB</option>
-        <option value="PR">PR</option>
-        <option value="PE">PE</option>
-        <option value="PI">PI</option>
-        <option value="RJ">RJ</option>
-        <option value="RN">RN</option>
-        <option value="RS">RS</option>
-        <option value="RO">RO</option>
-        <option value="RR">RR</option>
-        <option value="SC">SC</option>
-        <option value="SP">SP</option>
-        <option value="SE">SE</option>
-        <option value="TO">TO</option>
-        </select>
-        <span class="style1">*</span></td>
+          if ($cidades->num_rows > 0) {
+            echo '<option value="">Selecione uma cidade</option>';
 
-    </tr>
+            while($cid = $cidades->fetch_assoc()) {
+              echo "<option value=\"{$cid['id']}\">{$cid['nome']}</option>";
+            }
 
-    <tr>
+          } else {
+            echo '<option value="">Nenhuma cidade cadastrada</option>';
+          }
+          $conexao->close();
+          ?></select>
+          <span class="style1">*</span></td>
 
-      <td width="69">Cidade:</td>
-      <td><input name="cidade" type="text" id="cidade" size="70" maxlength="255" />
-      <span class="style1">*</span></td>
-
-    </tr>
+  </tr>
 
     <tr>
 

@@ -1,3 +1,14 @@
+<?php
+
+$conexao = new mysqli("localhost", "root", "mysql", "pet"); //conectando com o bd
+
+if($conexao === false){
+  die("ERROR: não foi possível conectar o bando de dados:  " . $conexao->connect_error);
+}
+$sql = "SELECT NOME FROM cliente ORDER BY nome";
+
+$clientes= $conexao->query($sql);
+?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -68,15 +79,25 @@
     </tr>
 
     <tr>
+      <td>Dono:</td><br>
+        <td><select name="dono" id="dono">
+          <?php
 
-      <td width="69">Dono:</td>
-      <td><select name="dono" id="dono" >
-        <option >Selecione...</option>
-        <option value="Conectar com o banco">Conectar com o banco</option>
-        </select>
-        <span class="style1">*</span></td>
+          if ($clientes->num_rows > 0) {
+            echo '<option value="">Selecione um dono</option>';
 
-    </tr>
+            while($cli = $clientes->fetch_assoc()) {
+              echo "<option value=\"{$cli['id']}\">{$cli['nome']}</option>";
+            }
+
+          } else {
+            echo '<option value="">Nenhum cliente cadastrado</option>';
+          }
+          $conexao->close();
+          ?></select>
+          <span class="style1">*</span></td>
+
+  </tr>
 
     <tr>
 
