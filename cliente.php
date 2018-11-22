@@ -108,7 +108,7 @@ $cidades = $conexao->query($sql);
 
     <tr>
       <td>Cidade:</td><br>
-        <td><select name="cidade" id="cidade">
+        <td><select name="cidade" id="cidade" type="Integer">
           <?php
 
           if ($cidades->num_rows > 0) {

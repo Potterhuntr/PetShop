@@ -5,7 +5,7 @@ $conexao = new mysqli("localhost", "root", "mysql", "pet"); //conectando com o b
 if($conexao === false){
   die("ERROR: não foi possível conectar o bando de dados:  " . $conexao->connect_error);
 }
-$sql = "SELECT NOME FROM cliente ORDER BY nome";
+$sql = "SELECT * FROM cliente ORDER BY nome";
 
 $clientes= $conexao->query($sql);
 ?>
@@ -67,7 +67,7 @@ $clientes= $conexao->query($sql);
   </script>
 
 <body>
-<form id="cadastro" name="cadastro" method="post" action="cadastros.php" onsubmit="return validaCampo(); return false;">
+<form id="cadastro" name="cadastro" method="post" action="bd_cadastrar/insertCar.php" onsubmit="return validaCampo(); return false;">
 
   <table width="625" border="0">
     <tr>
@@ -80,7 +80,7 @@ $clientes= $conexao->query($sql);
 
     <tr>
       <td>Dono:</td><br>
-        <td><select name="dono" id="dono">
+        <td><select name="dono" id="dono" type = "Integer">
           <?php
 
           if ($clientes->num_rows > 0) {

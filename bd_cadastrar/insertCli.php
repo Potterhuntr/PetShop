@@ -2,7 +2,7 @@
 $nome = trim($_POST['nome']);
 $documento = trim($_POST['documento']);
 $contato = trim($_POST['contato']);
-$cidade = Integer.parseInt(trim($_POST['cidade']));
+$cidade = trim($_POST['cidade']);
 $cep = trim($_POST['cep']);
 $rua = trim($_POST['rua']);
 $bairro = trim($_POST['bairro']);
@@ -19,12 +19,11 @@ if(!$conecta){
 
 $sqlinsert = "INSERT INTO cliente (nome, documento, contato, cidade_id, cep, rua, bairro, numero) VALUES ('$nome', '$documento', '$contato', '$cidade', '$cep', '$rua', '$bairro', '$numero')";
 
-// echo $sqlinsert . "<br/>";
 
 $resultado =  mysqli_query($conecta, $sqlinsert);
 
 if($resultado){
-  echo "Cliente inserido com sucesso";
+  echo "Clinte inserido com sucesso";
 } else {
 echo "Falha no cadastro";
 }

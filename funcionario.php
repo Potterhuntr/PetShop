@@ -9,6 +9,20 @@ if($conexao === false){
 $sql = "SELECT * FROM cidade ORDER BY nome";
 
 $cidades = $conexao->query($sql);
+
+
+?>
+<?php
+
+$conexao1 = new mysqli("localhost", "root", "mysql", "pet"); //conectando com o bd
+
+if($conexao1 === false){
+  die("ERROR: não foi possível conectar o bando de dados:  " . $conexao1->connect_error);
+}
+
+$sql1 = "SELECT * FROM cargo ORDER BY nome";
+
+$cargos = $conexao1->query($sql1);
 ?>
 <!DOCTYPE html>
 <html>
@@ -61,6 +75,11 @@ $cidades = $conexao->query($sql);
     else
     if(document.cadastro.cidade.value==""){
     alert("O Campo Cidade é obrigatório!");
+    return false;
+    }
+    else
+    if(document.cadastro.cargo.value==""){
+    alert("O Campo Cargo é obrigatório!");
     return false;
     }
     else
@@ -142,7 +161,7 @@ $cidades = $conexao->query($sql);
 
       <tr>
         <td>Cidade:</td><br>
-          <td><select name="cidade" id="cidade">
+          <td><select name="cidade" id="cidade" type="Integer">
             <?php
 
             if ($cidades->num_rows > 0) {
@@ -155,11 +174,32 @@ $cidades = $conexao->query($sql);
             } else {
               echo '<option value="">Nenhuma cidade cadastrada</option>';
             }
-            $conexao->close();
+           $conexao->close();
             ?></select>
             <span class="style1">*</span></td>
 
     </tr>
+
+    <tr>
+      <td>Cargo:</td><br>
+        <td><select name="cargo" id="cargo" type="Integer">
+          <?php
+
+          if ($cargos->num_rows > 0) {
+            echo '<option value="">Selecione um cargo</option>';
+
+            while($cag = $cargos->fetch_assoc()) {
+              echo "<option value=\"{$cag['id']}\">{$cag['nome']}</option>";
+            }
+
+          } else {
+            echo '<option value="">Nenhum cargo cadastrado</option>';
+          }
+          $conexao1->close();
+          ?></select>
+          <span class="style1">*</span></td>
+
+  </tr>
 
     <tr>
 

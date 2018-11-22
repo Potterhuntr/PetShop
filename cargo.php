@@ -41,7 +41,7 @@
   </script>
 
 <body>
-<form id="cadastro" name="cadastro" method="post" action="cadastros.php" onsubmit="return validaCampo(); return false;">
+<form id="cadastro" name="cadastro" method="post" action="bd_cadastrar/insertCar.php"  onsubmit="return validaCampo(); return false;">
 
   <table width="625" border="0">
 
