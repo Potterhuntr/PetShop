@@ -1,7 +1,7 @@
 <?php
 $nome = trim($_POST['nome']);
 $descricao = trim($_POST['descricao']);
-$nivelAcesso = trim($_POST['nivelAcessp']);
+$nivelAcesso = trim($_POST['nivelAcesso']);
 
 
 
