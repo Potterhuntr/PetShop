@@ -15,7 +15,7 @@
   ?>
   <?php
   // Incluir o topo
-  include("layout/lateralrelatorio.php");
+  include("layout/lateralRelatorios.php");
   ?>
 
 </body>
