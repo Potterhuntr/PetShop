@@ -67,7 +67,7 @@ $clientes= $conexao->query($sql);
   </script>
 
 <body>
-<form id="cadastro" name="cadastro" method="post" action="bd_cadastrar/insertCar.php" onsubmit="return validaCampo(); return false;">
+<form id="cadastro" name="cadastro" method="post" action="bd_cadastrar/insertAni.php" onsubmit="return validaCampo(); return false;">
 
   <table width="625" border="0">
     <tr>
@@ -110,7 +110,7 @@ $clientes= $conexao->query($sql);
     <tr>
 
       <td width="69">Comprimento:</td>
-      <td width="546"><input name="comprimeto" type="text" id="comprimento" size="70" maxlength="255" />
+      <td width="546"><input name="comprimento" type="text" id="comprimento" size="70" maxlength="255" />
       <span class="style1">*</span>  </td>
 
     </tr>
