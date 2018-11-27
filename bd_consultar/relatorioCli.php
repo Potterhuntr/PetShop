@@ -28,20 +28,34 @@ $cliente= $conexao->query($sql);
     .style3 {color: #0000FF; font-size: x-small;
     }
 
-    table, tr, td {
-    border: 1px solid black;
-     }
+    table, th, td {
+   border: 1px solid black;
+  }
+
+
 
   </style>
   <body>
 
 
 
-<table align="justify" >
+  <table align="center" >
+
+  <tr>
+    <th>Nome:</th>
+    <th>Documento:</th>
+    <th>Contato:</th>
+    <th>Cidade:</th>
+    <th>CEP:</th>
+    <th>Bairro:</th>
+    <th>Rua:</th>
+    <th>Número:</th>
 
 
-<tr align="justify" >
-  <td align="justify" >
+  </tr>
+
+
+
 <?php
 
 if ($cliente->num_rows > 0) {
@@ -49,13 +63,29 @@ if ($cliente->num_rows > 0) {
   while($cli = $cliente->fetch_assoc()) {
 
 
-  echo "Nome:  ",$cli['nome'],"  ","Documento:  ",$cli['documento'],"  ", "Contato:  ",$cli['contato'],"  ","Cidade:   ",$cli['cidade_id'], "  ","CEP:   ",$cli['cep'], "  ".
-    "Bairro:   ",$cli['bairro'], "  ","Rua:   ",$cli['rua'],"  ","Número:   ",$cli['numero'];
+    echo "<tr>";
 
-  echo "<br><br>";
+    echo "<td>{$cli['nome']}</td>";
+
+    echo "<td>{$cli['documento']}</td>";
+
+    echo "<td>{$cli['contato']}</td>";
+
+    echo "<td>{$cli['cidade_id']}</td>";
+
+    echo "<td>{$cli['cep']}</td>";
+
+    echo "<td>{$cli['bairro']}</td>";
+
+    echo "<td>{$cli['rua']}</td>";
+
+    echo "<td>{$cli['numero']}</td>";
+
+    echo "</tr>";
 
 }}
 $conexao->close();
-?><td></tr></table>
+?>
+</table>
 </body>
 </html>

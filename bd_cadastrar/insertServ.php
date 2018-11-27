@@ -1,3 +1,4 @@
+<meta http-equiv="refresh" content="1;url= ../cadastros.php">
 <?php
 $preco = trim($_POST['preco']);
 $descricao = trim($_POST['descricao']);

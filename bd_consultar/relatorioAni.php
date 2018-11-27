@@ -20,6 +20,7 @@ $animal= $conexao->query($sql);
   </head>
   <style type="text/css">
 
+
     .style1 {
     color: #FF0000;
     font-size: x-small;
@@ -28,34 +29,61 @@ $animal= $conexao->query($sql);
     .style3 {color: #0000FF; font-size: x-small;
     }
 
-    table, tr, td {
-    border: 1px solid black;
-     }
 
-  </style>
-  <body>
+        table, th, td {
+       border: 1px solid black;
+      }
 
-
-
-<table align="justify" >
+      </style>
+      <body>
 
 
-<tr align="justify" >
-  <td align="justify" >
-<?php
 
-if ($animal->num_rows > 0) {
+      <table align="center" >
 
-  while($ani = $animal->fetch_assoc()) {
+      <tr>
+        <th>Nome:</th>
+        <th>Dono:</th>
+        <th>Raça:</th>
+        <th>Comprimento:</th>
+        <th>Altura:</th>
+        <th>Carteira Vacina:</th>
 
 
-  echo "Nome:  ",$ani['nome'],"  ","Dono:  ",$ani['dono_id'],"  ", "Raça:  ",$ani['raca'],"  ","Comprimeto:   ",$ani['comprimento'], "  ","Altura:   ",$ani['altura'], "  ".
-    "Carteira de Vacina:   ",$ani['carteiravacina'];
+      </tr>
 
-  echo "<br><br>";
 
-}}
-$conexao->close();
-?><td></tr></table>
+
+    <?php
+
+    if ($animal->num_rows > 0) {
+
+      while($ani = $animal->fetch_assoc()) {
+
+
+        echo "<tr>";
+
+        echo "<td>{$ani['nome']}</td>";
+
+        echo "<td>{$ani['dono_id']}</td>";
+
+        echo "<td>{$ani['raca']}</td>";
+
+        echo "<td>{$ani['comprimento']}</td>";
+
+        echo "<td>{$ani['altura']}</td>";
+
+        echo "<td>{$ani['carteiravacina']}</td>";
+
+        echo "<td>{$ani['rua']}</td>";
+
+        echo "<td>{$ani['numero']}</td>";
+
+        echo "</tr>";
+
+    }}
+    $conexao->close();
+    ?>
+    </table>
 </body>
 </html>

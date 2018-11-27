@@ -27,21 +27,34 @@ $fornecedor= $conexao->query($sql);
 
     .style3 {color: #0000FF; font-size: x-small;
     }
+    table, th, td {
+   border: 1px solid black;
+  }
 
-    table, tr, td {
-    border: 1px solid black;
-     }
+
 
   </style>
   <body>
 
 
 
-<table align="justify" >
+  <table align="center" >
+
+  <tr>
+    <th>Nome:</th>
+    <th>Documento:</th>
+    <th>Contato:</th>
+    <th>Cidade:</th>
+    <th>CEP:</th>
+    <th>Bairro:</th>
+    <th>Rua:</th>
+    <th>Número:</th>
+    <th>Email:</th>
+
+  </tr>
 
 
-<tr align="justify" >
-  <td align="justify" >
+
 <?php
 
 if ($fornecedor->num_rows > 0) {
@@ -49,13 +62,31 @@ if ($fornecedor->num_rows > 0) {
   while($for = $fornecedor->fetch_assoc()) {
 
 
-  echo "Nome:  ",$for['nome'],"  ","Documento:  ",$for['documento'],"  ", "Contato:  ",$for['contato'],"  ","Cidade:   ",$for['cidade_id'], "  ","CEP:   ",$for['cep'], "  ".
-    "Bairro:   ",$for['bairro'], "  ","Rua:   ",$for['rua'],"  ","Número:   ",$for['numero'],"  ","Email:   ",$for['email'];
+    echo "<tr>";
 
-  echo "<br><br>";
+    echo "<td>{$for['nome']}</td>";
+
+    echo "<td>{$for['documento']}</td>";
+
+    echo "<td>{$for['contato']}</td>";
+
+    echo "<td>{$for['cidade_id']}</td>";
+
+    echo "<td>{$for['cep']}</td>";
+
+    echo "<td>{$for['bairro']}</td>";
+
+    echo "<td>{$for['rua']}</td>";
+
+    echo "<td>{$for['numero']}</td>";
+
+    echo "<td>{$for['email']}</td>";
+
+    echo "</tr>";
 
 }}
 $conexao->close();
-?><td></tr></table>
+?>
+</table>
 </body>
 </html>

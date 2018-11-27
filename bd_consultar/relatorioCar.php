@@ -28,33 +28,53 @@ $cargo= $conexao->query($sql);
     .style3 {color: #0000FF; font-size: x-small;
     }
 
-    table, tr, td {
-    border: 1px solid black;
-     }
 
-  </style>
-  <body>
+        table, th, td {
+       border: 1px solid black;
+      }
 
 
 
-<table align="justify" >
+      </style>
+      <body>
 
 
-<tr align="justify" >
-  <td align="justify" >
-<?php
 
-if ($cargo->num_rows > 0) {
+      <table align="center" >
 
-  while($car = $cargo->fetch_assoc()) {
+      <tr>
+        <th>Nome:</th>
+        <th>Descrição:</th>
+        <th>Nível de Acesso:</th>
 
 
-  echo "Nome:  ",$car['nome'],"  ","Descrição:  ",$car['descricao'],"  ","Nível de Acesso:  ",$car['nivelAcesso'];
 
-  echo "<br><br>";
+      </tr>
 
-}}
-$conexao->close();
-?><td></tr></table>
+
+
+    <?php
+
+    if ($cargo->num_rows > 0) {
+
+      while($car = $cargo->fetch_assoc()) {
+
+
+        echo "<tr>";
+
+        echo "<td>{$car['nome']}</td>";
+
+        echo "<td>{$car['descricao']}</td>";
+
+        echo "<td>{$car['nivelAcesso']}</td>";
+
+
+
+        echo "</tr>";
+
+    }}
+    $conexao->close();
+    ?>
+    </table>
 </body>
 </html>

@@ -20,10 +20,7 @@ $funcionario= $conexao->query($sql);
   </head>
   <style type="text/css">
 
-  *{
-    color: #000000;
 
-  }
     .style1 {
     color: #FF0000;
     font-size: x-small;
@@ -32,10 +29,10 @@ $funcionario= $conexao->query($sql);
     .style3 {color: #0000FF; font-size: x-small;
     }
 
+    table, th, td {
+   border: 1px solid black;
+  }
 
-     tr {
-     text-align: left;
- }
 
 
   </style>
@@ -46,11 +43,11 @@ $funcionario= $conexao->query($sql);
 <table align="center" >
 
   <tr>
-    <th>Nome:      </th>
-    <th>Documento:     </th>
-    <th>Conta Bancária:        </th>
-    <th>CTPS:         </th>
-    <th>Contato:      </th>
+    <th>Nome:</th>
+    <th>Documento:</th>
+    <th>Conta Bancária:</th>
+    <th>CTPS:</th>
+    <th>Contato:</th>
     <th>Cargo:</th>
     <th>Cidade:</th>
     <th>CEP:</th>
@@ -85,6 +82,8 @@ if ($funcionario->num_rows > 0) {
 
     echo "<td>{$fun['cidade_id']}</td>";
 
+    echo "<td>{$fun['cep']}</td>";
+
     echo "<td>{$fun['bairro']}</td>";
 
     echo "<td>{$fun['rua']}</td>";
@@ -94,6 +93,7 @@ if ($funcionario->num_rows > 0) {
     echo "<td>{$fun['email']}</td>";
 
     echo "</tr>";
+
 
 }}
 $conexao->close();

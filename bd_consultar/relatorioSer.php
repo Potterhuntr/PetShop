@@ -28,33 +28,52 @@ $servico= $conexao->query($sql);
     .style3 {color: #0000FF; font-size: x-small;
     }
 
-    table, tr, td {
-    border: 1px solid black;
-     }
 
-  </style>
-  <body>
+            table, th, td {
+           border: 1px solid black;
+          }
 
 
 
-<table align="justify" >
+          </style>
+          <body>
 
 
-<tr align="justify" >
-  <td align="justify" >
-<?php
 
-if ($servico->num_rows > 0) {
+          <table align="center" >
 
-  while($ser = $servico->fetch_assoc()) {
+          <tr>
+
+            <th>Descrição:</th>
+            <th>Preço:</th>
 
 
-  echo "Preço:  ",$ser['preco'],"  ","Descrição:  ",$ser['descricao'];
 
-  echo "<br><br>";
+          </tr>
 
-}}
-$conexao->close();
-?><td></tr></table>
+
+
+        <?php
+
+        if ($servico->num_rows > 0) {
+
+          while($ser = $servico->fetch_assoc()) {
+
+
+            echo "<tr>";
+
+
+            echo "<td>{$ser['descricao']}</td>";
+
+            echo "<td>{$ser['preco']}</td>";
+
+
+
+            echo "</tr>";
+
+        }}
+        $conexao->close();
+        ?>
+        </table>
 </body>
 </html>

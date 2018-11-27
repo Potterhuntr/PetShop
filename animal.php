@@ -14,6 +14,7 @@ $clientes= $conexao->query($sql);
   <head>
     <meta charset="utf-8">
     <title>Cadastro Animal</title>
+
   </head>
 
   <style type="text/css">
@@ -124,13 +125,7 @@ $clientes= $conexao->query($sql);
 
     </tr>
 
-    <tr>
 
-      <td width="69">CEP:</td>
-      <td><input name="cep" type="text" id="cep" size="70" maxlength="50" />
-      <span class="style1">*</span></td>
-
-    </tr>
 
     <tr>
 
